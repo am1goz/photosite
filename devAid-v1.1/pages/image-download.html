@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block header %}
+    <section class="jumbotron text-center">
+    <div class="container">
+      <h1>Загрузка фото</h1>
+        <div class="container__register">
+          <form enctype="multipart/form-data" method="post" action="/album/{{ albums[0]['id'] }}">
+            <div class="download_text">
+              <p>Выберите фото для загрузки</p>
+            </div>
+            <input type="file" name="image" multiple accept="image/*">
+            <input type="submit" value="Отправить"></p>
+          </form>
+        </div>
+      <p class="lead text-muted">Загрузите фото для того, чтобы увидеть их в альбоме ниже.</p>
+
+    </div>
+  </section>
+{% end %}
+
+{% block add %}{% end %}
+{% block body %}
+    {% for image in images %}
+
+        <div class="col-lg-3 col-md-4 col-6">
+            <img class="img-fluid" src="{{ image['path'] }}" tabindex="0">
+        </div>
+    {% end %}
+{% end %}

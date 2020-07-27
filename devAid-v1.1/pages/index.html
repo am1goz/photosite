@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block body %}
+    {% for album in albums %}
+
+        {% module Template("album.html", album=album) %}
+    {% end %}
+{% end %}

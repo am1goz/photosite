@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block header %}
+  <section class="jumbotron text-center">
+    <div class="container">
+      <h1>Авторизация</h1>
+        {% if log_error %}
+        <p class="error__message">{{ log_error }}</p>
+      {% end %}
+        <div class="container__register">
+          <form method="post" action="/login">
+            <div class="register__form">
+                <i class="fas fa-user"></i>
+                <input type="login" name="login" placeholder="Логин">
+            </div>
+            <div class="register__form">
+                <i class="fas fa-key"></i>
+                <input type="password" name="password" placeholder="Пароль">
+            </div>
+
+              <div class="register__submit"><input type="submit" name="submit" value="Войти"></div>
+
+          </form>
+        </div>
+      <p class="lead text-muted">Чтобы воспользоваться услугами на сайте, авторизируйтесь в системе. Также ниже можете увидеть пример галереи, которую вы можете создать.</p>
+
+    </div>
+  </section>
+{% end %}
+{% block add %}{% end %}
